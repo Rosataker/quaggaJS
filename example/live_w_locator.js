@@ -259,7 +259,7 @@ $(function() {
     Quagga.onProcessed(function(result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
             drawingCanvas = Quagga.canvas.dom.overlay;
-alert(result);
+
         if (result) {
             if (result.boxes) {
                 drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
@@ -273,8 +273,8 @@ alert(result);
             if (result.box) {
                 Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
             }
-
-            if (result.codeResult && result.codeResult.code) {
+            alert(result.codeResult.code);
+            if (result.codeResult && result.codeResult.code) {                
                 Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
             }
         }
