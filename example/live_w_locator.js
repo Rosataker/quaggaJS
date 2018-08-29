@@ -246,11 +246,7 @@ $(function() {
             decoder: {
                 readers : [{
                     format: "code_128_reader",
-                            config: {
-                                supplements: [
-                                    'code_39_reader', 'code_93_reader'
-                                ]
-                            }
+                    config: {}
                 }]
             },
             locate: true
@@ -280,8 +276,10 @@ $(function() {
             }
 
             if (result.codeResult && result.codeResult.code) {
+
             	Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
             }   
+            alert(result.codeResult.code);
         }
     });
 
