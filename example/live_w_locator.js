@@ -246,6 +246,8 @@ $(function() {
             decoder: {
                 readers : [{
                     format: "code_128_reader",
+                    format: "code_39_reader",
+                    format: "code_93_reader",      
                     config: {}
                 }]
             },
@@ -277,8 +279,6 @@ $(function() {
             if (result.codeResult && result.codeResult.code) {
                 Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
             }
-        }else{
-            alert("else");
         }
     });
 
