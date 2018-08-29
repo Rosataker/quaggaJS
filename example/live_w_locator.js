@@ -246,11 +246,7 @@ $(function() {
             decoder: {
                 readers : [{
                     format: "code_128_reader",
-                    config: {
-                                supplements: [
-                                    'code_128_reader', 'code_39_reader','code_93_reader'
-                                ]
-                    }
+                    config: {}
                 }]
             },
             locate: true
