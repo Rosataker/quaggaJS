@@ -269,17 +269,19 @@ $(function() {
                     Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
                 });
 
+            }else{
+            	App.setState("decoder_readers","code_39");
             }
 
             if (result.box) {
                	Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
             }
-alert(result.codeResult.code);
+
             if (result.codeResult && result.codeResult.code) {
 
             	Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
             }   
-            
+
         }
     });
 
