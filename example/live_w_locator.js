@@ -276,19 +276,7 @@ $(function() {
                 Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
             }else{
                 var readers_change = ['code_128_reader', 'code_39', 'code_93_reader'];
-                /*
-code_128_reader (default)
-ean_reader
-ean_8_reader
-code_39_reader
-code_39_vin_reader
-codabar_reader
-upc_reader
-upc_e_reader
-i2of5_reader
-2of5_reader
-code_93_reader
-*/
+/*
                 setTimeout(function () {
                     var state = App._convertNameToState("decoder_readers");
                     App.setState(state,readers_change[now_readers_flag]);
@@ -299,7 +287,7 @@ code_93_reader
                     }
                     
                 }, 3000);
-                
+  */              
             }
 
             if (result.codeResult && result.codeResult.code) {
@@ -325,3 +313,16 @@ code_93_reader
     });
 
 });
+/*
+code_128_reader (default)
+ean_reader
+ean_8_reader
+code_39_reader
+code_39_vin_reader
+codabar_reader
+upc_reader
+upc_e_reader
+i2of5_reader
+2of5_reader
+code_93_reader
+*/
