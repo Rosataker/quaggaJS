@@ -262,7 +262,7 @@ $(function() {
         var drawingCtx = Quagga.canvas.ctx.overlay,
             drawingCanvas = Quagga.canvas.dom.overlay;
 
-        if(timekeep == 30){
+        if(timekeep == 10){
             var readers_change = ['code_39', 'code_93_reader','code_128_reader'];
             var state = App._convertNameToState("decoder_readers");
 
@@ -282,6 +282,7 @@ $(function() {
                 }).forEach(function (box) {
                     Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
                 });
+                alert("timekeep->" + timekeep);
                 timekeep++;
             }
 
