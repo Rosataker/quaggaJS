@@ -282,7 +282,6 @@ $(function() {
                 }).forEach(function (box) {
                     Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
                 });
-                alert("timekeep->" + timekeep);
                 timekeep++;
             }
 
