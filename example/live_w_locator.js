@@ -262,10 +262,10 @@ $(function() {
         var drawingCtx = Quagga.canvas.ctx.overlay,
             drawingCanvas = Quagga.canvas.dom.overlay;
 
-        if(timekeep == 20){
+        if(timekeep == 50){
             var readers_change = ['code_128_reader', 'code_39', 'code_93_reader'];
             var state = App._convertNameToState("decoder_readers");
-            alert(readers_change[now_readers_flag]);
+            alert("readers_change->" +readers_change[now_readers_flag]);
             //App.setState(state,readers_change[now_readers_flag]);
             timekeep = 0;
             now_readers_flag++;
