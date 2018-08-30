@@ -256,6 +256,7 @@ $(function() {
 
     App.init();
 
+    var now_readers_flag = 0;
     Quagga.onProcessed(function(result) {
         var drawingCtx = Quagga.canvas.ctx.overlay,
             drawingCanvas = Quagga.canvas.dom.overlay;
@@ -272,15 +273,38 @@ $(function() {
             }
 
             if (result.box) {
-               	Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
             }else{
-                var state = App._convertNameToState("decoder_readers");
-            	App.setState(state,"code_39");
+                var readers_change = ['code_128_reader', 'code_39', 'code_93_reader'];
+                /*
+code_128_reader (default)
+ean_reader
+ean_8_reader
+code_39_reader
+code_39_vin_reader
+codabar_reader
+upc_reader
+upc_e_reader
+i2of5_reader
+2of5_reader
+code_93_reader
+*/
+                setTimeout(function () {
+                    var state = App._convertNameToState("decoder_readers");
+                    App.setState(state,readers_change[now_readers_flag]);
+                    if(now_readers_flag % 3 ==0){
+                        now_readers_flag = 0;
+                    }else{
+                        now_readers_flag ++;    
+                    }
+                    
+                }, 3000);
+                
             }
 
             if (result.codeResult && result.codeResult.code) {
 
-            	Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
             }   
 
         }
