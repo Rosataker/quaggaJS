@@ -274,7 +274,8 @@ $(function() {
             if (result.box) {
                	Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
             }else{
-            	App.setState("decoder_readers","code_39");
+                var state = App._convertNameToState("decoder_readers");
+            	App.setState(state,"code_39");
             }
 
             if (result.codeResult && result.codeResult.code) {
